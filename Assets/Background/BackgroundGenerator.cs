@@ -1,4 +1,4 @@
-﻿// BackgroundGenerator.cs
+﻿
 using UnityEngine;
 using UnityEngine.UI;
 using System.Collections.Generic;
@@ -9,8 +9,8 @@ public class BackgroundGenerator : MonoBehaviour
     [SerializeField] private RawImage backgroundImage;
 
     [Header("Texture Settings")]
-    [SerializeField] private int textureWidth = 1920;
-    [SerializeField] private int textureHeight = 1080;
+    [SerializeField] private int textureWidth = 5760;
+    [SerializeField] private int textureHeight = 1920;
 
     [Header("Time of Day")]
     [SerializeField] private bool isNightTime = true;
@@ -121,7 +121,7 @@ public class BackgroundGenerator : MonoBehaviour
 
         foreach (Rect building in buildings)
         {
-            // Заливка здания
+            
             for (int x = (int)building.x; x < building.x + building.width && x < textureWidth; x++)
             {
                 for (int y = 0; y < building.height && y < textureHeight; y++)
@@ -130,7 +130,7 @@ public class BackgroundGenerator : MonoBehaviour
                 }
             }
 
-            // Левая граница
+            
             for (int y = 0; y < building.height && y < textureHeight; y++)
             {
                 for (int w = 0; w < buildingOutlineWidth; w++)
@@ -141,7 +141,7 @@ public class BackgroundGenerator : MonoBehaviour
                 }
             }
 
-            // Правая граница
+            
             for (int y = 0; y < building.height && y < textureHeight; y++)
             {
                 for (int w = 0; w < buildingOutlineWidth; w++)
@@ -152,7 +152,7 @@ public class BackgroundGenerator : MonoBehaviour
                 }
             }
 
-            // Верхняя граница (крыша)
+            
             for (int x = (int)building.x; x < building.x + building.width && x < textureWidth; x++)
             {
                 for (int w = 0; w < buildingOutlineWidth; w++)
